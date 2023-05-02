@@ -1,0 +1,509 @@
+body {
+    background-image: linear-gradient(rgba(8, 2, 20, 0.902), rgba(17, 2, 22, 0.373)), url(../images/smart-background.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Alkatra', cursive;
+}
+
+.menu-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 10000;
+    font-size: 20px;
+    background-color: var(--btn-background);
+    border: 3px solid rgba(0, 0, 0, 0.421);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 170px;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.421);
+    border-radius: 10px;
+    padding: 0 20px;
+    background-color: var(--btn-background);
+    z-index: 9999;
+}
+
+.profile-settings {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.menu-ul {
+    padding-left: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+.menu-titles {
+    text-decoration: underline;
+    font-size: 17px;
+    font-weight: 900;
+    padding-bottom: 8px;
+}
+
+label {
+    font-size: 15px;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info {
+    color: var(--info-color);
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#user-name,
+#user-surname {
+    width: 100px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+.error {
+    border: 3px solid red;
+}
+
+#room-select,
+#time-input,
+#melody-select {
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+.user-submit,
+#clock-submit {
+    cursor: pointer;
+    background-color: var(--submit-color);
+    border-radius: 9px;
+    color: var(--text-color);
+    width: 70px;
+}
+
+#alarm-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#audio-player {
+    width: 140px;
+    height: 23px;
+    margin-bottom: 5px;
+}
+
+#bedroom-container,
+#living-room-container,
+#kitchen-container {
+    color: var(--container-text-color);
+    font-size: 14px;
+    display: flex;
+    text-align: center;
+}
+
+.room-name,
+.device-name,
+.status,
+.optimal-temperature,
+.user-temperature,
+.text-conditioner,
+.text-sound,
+.text-jalousie,
+#ac-temp,
+#decrease-temp,
+#increase-temp,
+.temperature-button_info,
+.channel-select,
+.chanel-text,
+.menu-ul,
+.menu-titles,
+.menu-button {
+    color: var(--text-color);
+}
+
+.room-name,
+.device-name,
+#ac-temp {
+    font-size: 16px;
+    text-align: center;
+}
+
+#decrease-temp,
+#increase-temp {
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+    background-color: var(--sensor-color);
+    border: none;
+}
+
+.text-sound {
+    font-size: 11px;
+    text-align: center;
+}
+
+#rooms {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.421);
+    border-radius: 10px;
+    padding: 10px;
+    width: 220px;
+    background-color: var(--sensor-color);
+}
+
+.room:hover {
+    border-color: #a0cfe1;
+    box-shadow: 12px 12px 2px rgb(172, 213, 212, 0.2);
+    content: "";
+    position: relative;
+}
+
+.room-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.room-icon img,
+#content img {
+    height: 50px;
+    width: 50px;
+}
+
+.devices {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.device {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    position: relative;
+}
+
+.device img {
+    height: 30px;
+    width: 30px;
+}
+
+.device-text {
+    position: absolute;
+    top: -67px;
+    width: 100%;
+    display: none;
+    font-size: 10px;
+    color: var(--text-color);
+    flex-direction: column;
+    text-align: center;
+}
+
+.fa-bounce {
+    margin-top: 20px;
+}
+
+#tv {
+    cursor: pointer;
+}
+
+#tv-container {
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: 150px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--tv-channels);
+    z-index: 10;
+}
+
+#volume-bar {
+    width: 50%;
+    height: 12px;
+    background-color: var(--volume-bar);
+    border-radius: 5px;
+    margin-top: 5px;
+    position: relative;
+}
+
+#volume-bar::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--text-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+
+#volume-up,
+#volume-down,
+#close-tv {
+    font-size: 15px;
+    width: 20px;
+    background-color: var(--volume-bar);
+    border: none;
+    color: var(--tv-sensor-color);
+    border-radius: 50%;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.tv-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#channel-select {
+    border-radius: 10px;
+}
+
+.chanel-text {
+    font-size: 12px;
+    text-align: center;
+}
+
+.sound-system-volume,
+.jalousie-system {
+    width: 70px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.ac-temperature,
+.sound-system-volume,
+.jalousie-system {
+    display: none;
+}
+
+#ac-temp {
+    width: 40px;
+    text-align: center;
+    background-color: var(--sensor-color);
+    border: none;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--sensor-color);
+    border: 1px solid rgba(0, 0, 0, 0.421);
+    border-radius: 10px;
+    align-content: center;
+    justify-content: space-around;
+    height: 100%;
+    flex-wrap: wrap;
+}
+
+#security,
+#lights,
+#thermostat,
+#appliances {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.temperature-btn {
+    display: inline-flex;
+}
+
+.temperature-display {
+    text-align: center;
+}
+
+.container-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    font-size: 13px;
+    color: var(--btn-off-text);
+}
+
+.toggle {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    border: 2px solid rgba(188, 28, 28, 0.456);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.circle {
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: var(--circle-color);
+    transition: .3s;
+}
+
+.active {
+    border-color: var(--active-color);
+}
+
+.active+.text {
+    color: var(--active-color);
+}
+
+.active .circle {
+    left: 100%;
+    transform: translateX(-100%);
+    transition: .3s;
+    background-color: var(--active-color);
+}
+
+.temperature-button {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: grid;
+}
+
+.dots-box {
+    cursor: pointer;
+    transform: rotate(5deg);
+    transform-origin: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.temperature-button_info {
+    font-size: 17px;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--btn-info-bgcolor);
+    box-shadow: 0 0 10px rgb(232, 216, 216);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.temperature-button_info::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 5%;
+    right: 5%;
+    top: 5%;
+    bottom: 5%;
+    border-radius: 100%;
+    border: 1px solid rgb(248, 243, 243);
+    opacity: 0.6;
+}
+
+.dots,
+.line,
+.line_active,
+.round,
+.seperate-lines,
+.seperate-dots {
+    fill: transparent;
+    stroke: var(--text-color);
+    stroke-width: 3px;
+    stroke-linecap: round;
+    stroke-dasharray: 0 21;
+    transition: all 0.5s ease-in-out;
+}
+
+.line,
+.line_active,
+.round {
+    stroke-width: 1px;
+    stroke-dasharray: 276 276;
+    transform: rotate(48deg);
+    transform-origin: center;
+}
+
+.line_active {
+    stroke: var(--stroke-color);
+    stroke-dasharray: 100 276;
+    /* from 54 to 276 */
+    transition: all 0.5s ease-in-out;
+}
+
+.round {
+    stroke-width: 16px;
+    stroke-dasharray: 0 276;
+    transform: rotate(-240deg);
+    /* from -240 to 48 degrees */
+}
+
+.seperate-lines,
+.seperate-dots {
+    stroke: var(--seperate-color);
+    transform: rotate(60deg);
+    transform-origin: center;
+}
+
+.seperate-dots {
+    stroke-dasharray: 40 313;
+}
+
+.seperate-lines {
+    stroke-dasharray: 53 276;
+    transform: rotate(49deg);
+}
+
+@media (min-width: 768px) {
+    .page {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    #content {
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+}
